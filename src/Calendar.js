@@ -20,7 +20,7 @@ class Calendar extends React.Component {
         .then(res => {
             this.setState({
                 data:res
-            })
+            })            
         })        
     }
     getJsonData = () => {
@@ -47,15 +47,19 @@ class Calendar extends React.Component {
             }            
         })
     }
-    test = () => {
-        console.log(123)
-    }
+    handleCalendarGet = val => {
+        this.setState({ position: val });
+    };
     render() {
         return (
             <div className="div_table">
                 <div className="div_tr">{this.renderHeader()}</div>           
-                {this.state.data.map((obj, i) => <Row data={obj} colIdx={i}
-                    test={this.test}
+                {this.state.data.map((obj, i) => <Row 
+                    key={i}
+                    data={obj} 
+                    colIdx={i}
+                    position={this.state.position ? this.state.position : ""}
+                    handleRowVal={this.handleCalendarGet}
                 />)}
             </div>
         )

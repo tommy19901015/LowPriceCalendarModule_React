@@ -19,14 +19,11 @@ class Grid extends Component {
         y_coordinate: y_coordinate
       }
     },() => {
-        this.props.handleValue(this.state.position);
+        this.props.handleGridVal(this.state.position);
     });
     
   };
-  test = () => {
-      console.log(44)
-  }
-
+  
   render() {
     const { x_coordinate, y_coordinate } = this.state.position;
     return (

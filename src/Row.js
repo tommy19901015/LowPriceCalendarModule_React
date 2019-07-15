@@ -4,13 +4,14 @@ import Grid from "./Grid";
 class Row extends Component {
   state = {
     position: {
-        x_coordinate: "",
-        y_coordinate: ""
+        x_coordinate: "s",
+        y_coordinate: "s"
       }
   };
-  handleGet = val => {
-    console.log(val)
-    this.setState({ position: val });
+  handleRowGet = val => {
+    this.setState({ position: val },() => {
+      this.props.handleRowVal(this.state.position);
+    });    
   };
   render() {
     return (
@@ -18,12 +19,13 @@ class Row extends Component {
         <div className="div_td goDate">{this.props.data.goDate}</div>
         {this.props.data.detail.map((obj,i) => (
           <Grid
+            key={i}
             data={obj}
             rowIdx={i}
             colIdx={this.props.colIdx}
-            handleValue={this.handleGet}
-            colActive={this.state.position.x_coordinate === this.props.colIdx ? true : false}
-            rowActive={this.state.position.y_coordinate === this.props.rowIdx ? true : false}
+            handleGridVal={this.handleRowGet}
+            rowActive={this.props.position.y_coordinate === i ? true : false}
+            colActive={this.props.position.x_coordinate === this.props.colIdx ? true : false} 
           />
         ))}
       </div>
