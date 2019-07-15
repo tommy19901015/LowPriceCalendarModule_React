@@ -47,11 +47,16 @@ class Calendar extends React.Component {
             }            
         })
     }
+    test = () => {
+        console.log(123)
+    }
     render() {
         return (
             <div className="div_table">
                 <div className="div_tr">{this.renderHeader()}</div>           
-                {this.state.data.map((obj, i) => <Row data={obj} rowIdx={i} />)}
+                {this.state.data.map((obj, i) => <Row data={obj} colIdx={i}
+                    test={this.test}
+                />)}
             </div>
         )
     }
