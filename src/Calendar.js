@@ -1,17 +1,19 @@
 import axios from "axios";
 import React from "react";
 import "./css/calendar.css";
+import Row from "./Row";
 
 class Calendar extends React.Component {
     state = {
-        test:"test",
-        active:false,
+        active: null,
         row:7,
         column:7,
         moveColumn:3,
         jsonUrl:'ticketInfo.json',
         data:[],
-        grid:""
+        grid:"",
+        selectedRow:null,
+        test:[1,2,3,4,5]
     }
     componentDidMount = () => {
         this.getJsonData()
@@ -45,36 +47,11 @@ class Calendar extends React.Component {
             }            
         })
     }
-    renderRow = () => {
-        return this.state.data.map((item, i) => {
-            const { goDate, detail } = item;
-            return (
-                <div className="div_tr">
-                    <div className="div_td goDate">{goDate}</div>
-                    {this.renderGrid(detail)}
-                </div>
-            )
-         })
-    }
-    renderGrid = (detail) => {
-        return detail.map((item, i) => {
-            return (
-                <div key={i} className={ this.state.active ? "div_td active" : "div_td" } onClick={this.clickGrid.bind(this, i)}>{item.price}</div>
-            )
-         })
-    }
-    clickGrid = (e,i) => {
-        console.log(e)
-        console.log(i)
-        // this.setState({
-        //     active: !this.state.active
-        //   });
-    }
     render() {
         return (
             <div className="div_table">
-                <div className="div_tr">{this.renderHeader()}</div>
-                {this.renderRow()}              
+                <div className="div_tr">{this.renderHeader()}</div>           
+                {this.state.data.map((obj, i) => <Row data={obj} rowIdx={i} />)}
             </div>
         )
     }
