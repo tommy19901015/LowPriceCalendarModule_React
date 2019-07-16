@@ -10,7 +10,9 @@ class Calendar extends React.Component {
         // column:7,
         // moveColumn:3,
         jsonUrl:'ticketInfo.json',
-        data:[]
+        data:[],
+        moveDirection:'right',
+        moveGrid:3
     }
     componentDidMount = () => {
         this.getJsonData()
@@ -49,6 +51,7 @@ class Calendar extends React.Component {
     };
     clickMoveBtn = (e) => {
         const direction = e.currentTarget.className.split("btn ")[1];
+        this.setState({ moveDirection: direction });
         console.log(direction)
     }
     render() {
@@ -59,6 +62,8 @@ class Calendar extends React.Component {
                     key={i}
                     data={obj} 
                     colIdx={i}
+                    movedirection={this.state.moveDirection}
+                    moveGrid={this.state.moveGrid}
                     position={this.state.position ? this.state.position : ""}
                     handleRowVal={this.handleCalendarGet}
                 />)}

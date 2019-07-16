@@ -21,16 +21,36 @@ class Grid extends Component {
     },() => {
         this.props.handleGridVal(this.state.position);
     });
-    
+    console.log('moveDirection = ' + this.props.moveDirection)
+    console.log('moveGrid = ' + this.props.moveGrid)
   };
+
+  addClassName = () => {
+      let name = this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
+      if(this.props.rowIdx < 3){
+        name = name + ' now';
+      }
+      if(this.props.rowIdx >= 3){
+        name = name + ' next';
+      }
+      // console.log(this.props.rowIdx)
+      return name
+  } 
+
+  //pre first grid(i) - this.props.moveGrid
+  //now first grid(default 3) 
+  //next first grid(i) + this.props.moveGrid
   
   render() {
-    const { x_coordinate, y_coordinate } = this.state.position;
     return (
       <div
-        className={
-          this.props.colActive || this.props.rowActive? " div_td active" : "div_td"
-        }
+        className={this.addClassName()}
+        // className={
+        //   this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
+        // }
+        // className = {`div_td ${this.props.colActive || this.props.rowActive ? 'active' : ''}${this.props.rowIdx >= 3 ? 'mobile' : ''}`}
+        // className = {`div_td ${this.props.colActive || this.props.rowActive ? 'active' : ''}
+        // ${this.props.Movedirection === 'undefined' ? '' : this.props.Movedirection}`}
         data-coordinate={this.props.colIdx + "_" + this.props.rowIdx}
         onClick={this.clickGrid}
       >

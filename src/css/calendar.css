@@ -69,18 +69,34 @@ body .div_table .btn_container {
     width: 100%;
     min-width: 320px;
     position: absolute;
-    overflow: auto;
+    overflow: hidden;
+    background-color: aqua;
+    z-index: -1;
+  }
+  body .div_table .div_tr {
+    overflow: hidden;
+  }
+  body .div_table .div_tr .div_td.first_td {
+    z-index: 2;
   }
   body .div_table .div_tr .div_td:first-child {
     width: 100px;
+    z-index: 999;
   }
   body .div_table .div_tr .div_td:not(:first-child) {
-    position: relative;
     min-width: calc((100% - 100px)/3);
   }
-  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+5) {
-    background-color: blue;
+  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+2) {
+    background-color: salmon;
     position: relative;
+    left: -120px;
+    z-index: -1;
+  }
+  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+5) {
+    position: relative;
+    background-color: blue;
+    right: -100px;
+    display: none;
   }
   body .div_table .btn_container {
     display: block;

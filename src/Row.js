@@ -22,6 +22,8 @@ class Row extends Component {
             key={i}
             data={obj}
             rowIdx={i}
+            moveDirection={this.props.moveDirection}
+            moveGrid={this.props.moveGrid}
             colIdx={this.props.colIdx}
             handleGridVal={this.handleRowGet}
             rowActive={this.props.position.y_coordinate === i}
