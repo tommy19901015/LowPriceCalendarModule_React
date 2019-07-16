@@ -31,12 +31,10 @@ class Grid extends Component {
         className={
           this.props.colActive || this.props.rowActive? " div_td active" : "div_td"
         }
-        // className={x_coordinate === 1 || y_coordinate === 1 ? " div_td active" : "div_td"}
         data-coordinate={this.props.colIdx + "_" + this.props.rowIdx}
         onClick={this.clickGrid}
       >
-        {/* {this.props.data.price} */}
-        {this.props.colIdx + "_" + this.props.rowIdx}
+        {this.props.data.price}
       </div>
     );
   }

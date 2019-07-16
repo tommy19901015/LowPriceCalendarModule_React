@@ -2,16 +2,19 @@ body{
     font-family: Microsoft JhengHei;
     font-size: 14px;
     line-height: 1.5;
+    position: relative;
     .div_table{
         display:table;
         border-top: 1px solid #e1e2e4;
         border-right: 1px solid #e1e2e4;
         width: 780px;
+        overflow: hidden;
         .div_tr{
             display: table-row;
             height: 50px;
             &:first-child{
                 background: #eaedf2;
+                min-width: 102px !important
             }
             .div_td{
                 display: table-cell;
@@ -20,8 +23,12 @@ body{
                 color: #666;
                 text-align: center;
                 line-height: 50px;
+                cursor: pointer;
                 &.active{
-                    background-color: cadetblue;
+                    background-color: #f7f7f7;
+                }
+                &.goDate, &.backDate{
+                    cursor:default;
                 }
                 &:first-child{
                     background: #f1f1f1;
@@ -39,6 +46,62 @@ body{
                     }
                 }
             }    
+        }
+        .btn_container{
+           display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    body{
+        .div_table{
+            width: 100%;
+            min-width: 320px;
+            position: absolute;
+            overflow: auto;
+            .div_tr{
+                // &:not(:first-child) {
+                    .div_td{
+                        &:first-child{
+                            width: 100px;
+                        }
+                        &:not(:first-child) {
+                            position: relative;
+                            min-width: calc((100% - 100px)/3);
+                            &:nth-child(n+5){
+                                background-color:blue;
+                                position: relative;
+                                // display: none;
+                            }
+                        }
+                    }
+                // }                    
+            }
+            .btn_container{
+                display: block;
+                position: absolute;
+                top:50%;
+                width: 100%;
+                .btn{
+                    background-color: hsla(0,0%,67%,.5);
+                    width: 20px;
+                    height: 50px;
+                    display: inline-block;
+                    color: #FFF;
+                    font-size: 16px;
+                    cursor: pointer;
+                    line-height: 40px;
+                    text-align: center;
+                    &.right{
+                        float: right            
+                    }
+                    &.left{
+                        position: absolute;
+                        left: 113px;
+                    }
+                }
+            }
         }
     }
 }

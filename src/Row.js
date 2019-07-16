@@ -4,8 +4,8 @@ import Grid from "./Grid";
 class Row extends Component {
   state = {
     position: {
-        x_coordinate: "s",
-        y_coordinate: "s"
+        x_coordinate: "",
+        y_coordinate: ""
       }
   };
   handleRowGet = val => {
@@ -24,8 +24,8 @@ class Row extends Component {
             rowIdx={i}
             colIdx={this.props.colIdx}
             handleGridVal={this.handleRowGet}
-            rowActive={this.props.position.y_coordinate === i ? true : false}
-            colActive={this.props.position.x_coordinate === this.props.colIdx ? true : false} 
+            rowActive={this.props.position.y_coordinate === i}
+            colActive={this.props.position.x_coordinate === this.props.colIdx} 
           />
         ))}
       </div>

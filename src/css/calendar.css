@@ -2,6 +2,7 @@ body {
   font-family: Microsoft JhengHei;
   font-size: 14px;
   line-height: 1.5;
+  position: relative;
 }
 
 body .div_table {
@@ -9,6 +10,7 @@ body .div_table {
   border-top: 1px solid #e1e2e4;
   border-right: 1px solid #e1e2e4;
   width: 780px;
+  overflow: hidden;
 }
 
 body .div_table .div_tr {
@@ -18,6 +20,7 @@ body .div_table .div_tr {
 
 body .div_table .div_tr:first-child {
   background: #eaedf2;
+  min-width: 102px !important;
 }
 
 body .div_table .div_tr .div_td {
@@ -27,10 +30,15 @@ body .div_table .div_tr .div_td {
   color: #666;
   text-align: center;
   line-height: 50px;
+  cursor: pointer;
 }
 
 body .div_table .div_tr .div_td.active {
-  background-color: cadetblue;
+  background-color: #f7f7f7;
+}
+
+body .div_table .div_tr .div_td.goDate, body .div_table .div_tr .div_td.backDate {
+  cursor: default;
 }
 
 body .div_table .div_tr .div_td:first-child {
@@ -50,5 +58,53 @@ body .div_table .div_tr .div_td.first_td .fristText {
 body .div_table .div_tr .div_td.first_td .fristText:first-child {
   line-height: 25px;
   float: right;
+}
+
+body .div_table .btn_container {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  body .div_table {
+    width: 100%;
+    min-width: 320px;
+    position: absolute;
+    overflow: auto;
+  }
+  body .div_table .div_tr .div_td:first-child {
+    width: 100px;
+  }
+  body .div_table .div_tr .div_td:not(:first-child) {
+    position: relative;
+    min-width: calc((100% - 100px)/3);
+  }
+  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+5) {
+    background-color: blue;
+    position: relative;
+  }
+  body .div_table .btn_container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  body .div_table .btn_container .btn {
+    background-color: rgba(171, 171, 171, 0.5);
+    width: 20px;
+    height: 50px;
+    display: inline-block;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+  }
+  body .div_table .btn_container .btn.right {
+    float: right;
+  }
+  body .div_table .btn_container .btn.left {
+    position: absolute;
+    left: 113px;
+  }
 }
 /*# sourceMappingURL=calendar.css.map */
