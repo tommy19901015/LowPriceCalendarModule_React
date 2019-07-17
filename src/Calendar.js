@@ -32,29 +32,6 @@ class Calendar extends React.Component {
             console.log(error);
         });
     }
-    // renderHeader = () => {
-    //     const headerArr = this.state.data.map((item, i) => {
-    //         console.log(item)  
-    //         return item.detail[i].backDate          
-    //     })
-    //     headerArr.unshift({goText:"去程",backText:"回程"})
-    //     console.log(headerArr)
-    //     return headerArr.map((text, i) => {
-    //         if(i === 0){
-    //             return (
-    //             <div className="div_tr">
-    //                 <div key={i} className="div_td backDate first_td">
-    //                 <div className="fristText">{text.backText}</div>
-    //                 <div className="fristText">{text.goText}</div></div>
-    //             </div>)
-    //         }else{
-    //             return (
-    //                 <div className="div_tr">
-    //                     <div key={i} className="div_td backDate">{text}</div>
-    //                 </div>)
-    //         }            
-    //     })
-    // }
     renderLeftBlock = () => {
         const leftArr = this.state.data.map((item, i) => {
             return item.goDate          
@@ -88,12 +65,44 @@ class Calendar extends React.Component {
         this.setState({ position: val });
     };
     onPrevClick = () => {
-        // console.log("onPrevClick");
-        this.setState({ currClass: "" });
+        const dataLength =  this.state.data.length;
+        const now = this.state.currClass
+        let transformNum = parseInt(now.split('transform')[1],10);
+        if(now === ''){
+            this.setState({ currClass: ""});
+        }else{
+            if((transformNum - this.state.moveGrid) > 0){
+                transformNum = transformNum - this.state.moveGrid;
+                this.setState({ currClass: "transform" +  transformNum});
+            }else{
+                this.setState({ currClass: ""});
+            }
+        }
+        // const dataLength =  this.state.data.length;
+        // this.setState({ currClass: "" });
       };
     onNextClick = () => {
-        // console.log("onNextClick");
-        this.setState({ currClass: "transform" });
+        const dataLength =  this.state.data.length;
+        const now = this.state.currClass
+        let transformNum = parseInt(now.split('transform')[1],10);
+        if(now === ''){
+            this.setState({ currClass: "transform" +  this.state.moveGrid});
+        }else{
+            if((transformNum + this.state.moveGrid) < dataLength){
+                transformNum = transformNum + this.state.moveGrid;
+                this.setState({ currClass: "transform" +  transformNum});
+            }else{
+                this.setState({ currClass: "transform" +  dataLength});
+            }
+        }        
+        //transform3 1~3transform  
+        //transform6 4~6transform
+        //transform7 5~7transform
+
+        //transform[number] - moveGrid 
+
+        //transform4 2~4
+        //<3 => transform1 1~3
     };
     render() {
         return (
@@ -116,7 +125,6 @@ class Calendar extends React.Component {
                         moveGrid={this.state.moveGrid}
                         position={this.state.position ? this.state.position : ""}
                         handleRowVal={this.handleCalendarGet}
-                        // currStyle={this.state.currClass}
                     />)}
                 </div> 
                 </div>
@@ -125,22 +133,6 @@ class Calendar extends React.Component {
                      <div className="btn right"onClick={this.onNextClick} >{'>'}</div>
                 </div>
             </div>
-            // <div className="div_table">
-            //     <div className="div_tr">{this.renderHeader()}</div>           
-            //     {this.state.data.map((obj, i) => <Row 
-            //         key={i}
-            //         data={obj} 
-            //         colIdx={i}
-            //         movedirection={this.state.moveDirection}
-            //         moveGrid={this.state.moveGrid}
-            //         position={this.state.position ? this.state.position : ""}
-            //         handleRowVal={this.handleCalendarGet}
-            //     />)}
-            //     <div className="btn_container">
-            //         <div className="btn left" onClick={this.clickMoveBtn}>{'<'}</div>
-            //         <div className="btn right"onClick={this.clickMoveBtn} >{'>'}</div>
-            //     </div>
-            // </div>
         )
     }
 }
