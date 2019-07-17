@@ -14,9 +14,10 @@ class Row extends Component {
     });    
   };
   render() {
+    // console.log(this.props.data.detail)
     return (
       <div className="div_tr">
-        <div className="div_td goDate">{this.props.data.goDate}</div>
+        {/* <div className="div_td goDate">{this.props.data.goDate}</div> */}
         {this.props.data.detail.map((obj,i) => (
           <Grid
             key={i}

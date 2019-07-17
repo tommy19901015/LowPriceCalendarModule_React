@@ -1,0 +1,24 @@
+.div_table{
+    display: table;
+    border-top: 1px solid #e1e2e4;
+    border-right: 1px solid #e1e2e4;
+    .div_tr{
+        display: table-row;
+            height: 50px;
+            :first-child{
+                background: #f1f1f1;
+            } 
+            .div_td{
+                display: table-cell;
+                border-left: 1px solid #e1e2e4;
+                border-bottom: 1px solid #e1e2e4;
+                color: #666;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                &.active{
+                    background-color: #f7f7f7;
+                }
+            }    
+    }
+}

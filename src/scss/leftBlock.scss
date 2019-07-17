@@ -1,0 +1,33 @@
+.div_table{
+    display: table;
+    width: 100px;
+    border-top: 1px solid #e1e2e4;
+    .div_tr{
+        display: table-row;
+            height: 50px; 
+        .div_td{
+            display: table-cell;
+            border-left: 1px solid #e1e2e4;
+            border-bottom: 1px solid #e1e2e4;
+            color: #666;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            &:first-child{
+                background: #f1f1f1;
+            }
+            &.first_td{
+                padding: 5px;
+                background: #eaedf2;
+                .fristText{
+                    height: 25px;
+                    float: left;
+                    &:first-child{
+                        line-height: 25px;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}

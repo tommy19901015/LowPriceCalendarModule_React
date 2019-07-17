@@ -27,13 +27,12 @@ class Grid extends Component {
 
   addClassName = () => {
       let name = this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
-      if(this.props.rowIdx < 3){
-        name = name + ' now';
-      }
-      if(this.props.rowIdx >= 3){
-        name = name + ' next';
-      }
-      // console.log(this.props.rowIdx)
+      // if(this.props.rowIdx < 3){
+      //   name = name + ' now';
+      // }
+      // if(this.props.rowIdx >= 3){
+      //   name = name + ' next';
+      // }
       return name
   } 
 

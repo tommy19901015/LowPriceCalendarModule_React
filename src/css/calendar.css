@@ -2,28 +2,29 @@ body {
   font-family: Microsoft JhengHei;
   font-size: 14px;
   line-height: 1.5;
-  position: relative;
 }
 
-body .div_table {
+body .main_container {
+  width: 768px;
+  display: inline-block;
+}
+
+body .main_container .left_block {
+  display: inline-block;
+}
+
+body .main_container .left_block .div_table {
   display: table;
+  width: 100px;
   border-top: 1px solid #e1e2e4;
-  border-right: 1px solid #e1e2e4;
-  width: 780px;
-  overflow: hidden;
 }
 
-body .div_table .div_tr {
+body .main_container .left_block .div_table .div_tr {
   display: table-row;
   height: 50px;
 }
 
-body .div_table .div_tr:first-child {
-  background: #eaedf2;
-  min-width: 102px !important;
-}
-
-body .div_table .div_tr .div_td {
+body .main_container .left_block .div_table .div_tr .div_td {
   display: table-cell;
   border-left: 1px solid #e1e2e4;
   border-bottom: 1px solid #e1e2e4;
@@ -33,70 +34,62 @@ body .div_table .div_tr .div_td {
   cursor: pointer;
 }
 
-body .div_table .div_tr .div_td.active {
-  background-color: #f7f7f7;
-}
-
-body .div_table .div_tr .div_td.goDate, body .div_table .div_tr .div_td.backDate {
-  cursor: default;
-}
-
-body .div_table .div_tr .div_td:first-child {
+body .main_container .left_block .div_table .div_tr .div_td:first-child {
   background: #f1f1f1;
 }
 
-body .div_table .div_tr .div_td.first_td {
+body .main_container .left_block .div_table .div_tr .div_td.first_td {
   padding: 5px;
   background: #eaedf2;
 }
 
-body .div_table .div_tr .div_td.first_td .fristText {
+body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText {
   height: 25px;
   float: left;
 }
 
-body .div_table .div_tr .div_td.first_td .fristText:first-child {
+body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText:first-child {
   line-height: 25px;
   float: right;
 }
 
-body .div_table .btn_container {
-  display: none;
+body .main_container .right_block {
+  display: inline-block;
+}
+
+body .main_container .right_block .div_table {
+  display: table;
+  border-top: 1px solid #e1e2e4;
+  border-right: 1px solid #e1e2e4;
+}
+
+body .main_container .right_block .div_table .div_tr {
+  display: table-row;
+  height: 50px;
+}
+
+body .main_container .right_block .div_table .div_tr:first-child {
+  background: #eaedf2;
+}
+
+body .main_container .right_block .div_table .div_tr .div_td {
+  display: table-cell;
+  border-left: 1px solid #e1e2e4;
+  border-bottom: 1px solid #e1e2e4;
+  color: #666;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+body .main_container .right_block .div_table .div_tr .div_td.active {
+  background-color: #f7f7f7;
 }
 
 @media screen and (max-width: 769px) {
   body .div_table {
     width: 100%;
     min-width: 320px;
-    position: absolute;
-    overflow: hidden;
-    background-color: aqua;
-    z-index: -1;
-  }
-  body .div_table .div_tr {
-    overflow: hidden;
-  }
-  body .div_table .div_tr .div_td.first_td {
-    z-index: 2;
-  }
-  body .div_table .div_tr .div_td:first-child {
-    width: 100px;
-    z-index: 999;
-  }
-  body .div_table .div_tr .div_td:not(:first-child) {
-    min-width: calc((100% - 100px)/3);
-  }
-  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+2) {
-    background-color: salmon;
-    position: relative;
-    left: -120px;
-    z-index: -1;
-  }
-  body .div_table .div_tr .div_td:not(:first-child):nth-child(n+5) {
-    position: relative;
-    background-color: blue;
-    right: -100px;
-    display: none;
   }
   body .div_table .btn_container {
     display: block;
