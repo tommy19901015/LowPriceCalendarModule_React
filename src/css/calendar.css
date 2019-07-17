@@ -10,12 +10,13 @@ body .main_container {
 }
 
 body .main_container .left_block {
+  width: 100px;
   display: inline-block;
 }
 
 body .main_container .left_block .div_table {
   display: table;
-  width: 100px;
+  width: 100%;
   border-top: 1px solid #e1e2e4;
 }
 
@@ -54,11 +55,13 @@ body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText:
 }
 
 body .main_container .right_block {
+  width: calc((100% - 100px));
   display: inline-block;
 }
 
 body .main_container .right_block .div_table {
   display: table;
+  width: 100%;
   border-top: 1px solid #e1e2e4;
   border-right: 1px solid #e1e2e4;
 }

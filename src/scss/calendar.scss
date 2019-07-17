@@ -6,13 +6,14 @@ body{
         width: 768px;
         display: inline-block;
         .left_block{
+            width: 100px;
             display: inline-block;
             // display: inline-flex;
             // float: left;
             // @import 'leftBlock';
             .div_table{
                 display: table;
-                width: 100px;
+                width: 100%;
                 border-top: 1px solid #e1e2e4;
                 .div_tr{
                     display: table-row;
@@ -45,13 +46,14 @@ body{
             }
         }
         .right_block{
+            width: calc((100% - 100px));
             // display: inline-flex;
             // float: right;
             // @import 'rightBlock';
             display: inline-block;
             .div_table{
-                // width: calc((100% - 100px));
                 display: table;
+                width: 100%;
                 border-top: 1px solid #e1e2e4;
                 border-right: 1px solid #e1e2e4;
                 .div_tr{
