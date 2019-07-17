@@ -7,6 +7,7 @@ body {
 body .main_container {
   width: 768px;
   display: inline-block;
+  position: relative;
 }
 
 body .main_container .left_block {
@@ -55,7 +56,6 @@ body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText:
 }
 
 body .main_container .right_block {
-  width: calc((100% - 100px));
   display: inline-block;
 }
 
@@ -89,18 +89,71 @@ body .main_container .right_block .div_table .div_tr .div_td.active {
   background-color: #f7f7f7;
 }
 
+body .main_container .btn_container {
+  display: none;
+}
+
 @media screen and (max-width: 769px) {
-  body .div_table {
-    width: 100%;
+  body .main_container {
     min-width: 320px;
   }
-  body .div_table .btn_container {
+  body .main_container .left_block {
+    width: 100px;
+    display: inline-block;
+  }
+  body .main_container .left_block .div_table {
+    display: table;
+    width: 100%;
+    border-top: 1px solid #e1e2e4;
+  }
+  body .main_container .left_block .div_table .div_tr {
+    display: table-row;
+    height: 50px;
+  }
+  body .main_container .left_block .div_table .div_tr .div_td {
+    display: table-cell;
+    border-left: 1px solid #e1e2e4;
+    border-bottom: 1px solid #e1e2e4;
+    color: #666;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+  body .main_container .left_block .div_table .div_tr .div_td:first-child {
+    background: #f1f1f1;
+  }
+  body .main_container .left_block .div_table .div_tr .div_td.first_td {
+    padding: 5px;
+    background: #eaedf2;
+  }
+  body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText {
+    height: 25px;
+    float: left;
+  }
+  body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText:first-child {
+    line-height: 25px;
+    float: right;
+  }
+  body .main_container .right_block {
+    width: auto;
+  }
+  body .main_container .right_block .div_table {
+    min-width: 320px;
+  }
+  body .main_container .right_block .div_table .div_tr .div_td {
+    min-width: cale(100%/3);
+  }
+  body .main_container .right_block.transform {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  body .main_container .btn_container {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 49.5%;
     width: 100%;
   }
-  body .div_table .btn_container .btn {
+  body .main_container .btn_container .btn {
     background-color: rgba(171, 171, 171, 0.5);
     width: 20px;
     height: 50px;
@@ -111,12 +164,12 @@ body .main_container .right_block .div_table .div_tr .div_td.active {
     line-height: 40px;
     text-align: center;
   }
-  body .div_table .btn_container .btn.right {
+  body .main_container .btn_container .btn.right {
     float: right;
   }
-  body .div_table .btn_container .btn.left {
+  body .main_container .btn_container .btn.left {
     position: absolute;
-    left: 113px;
+    left: 100px;
   }
 }
 /*# sourceMappingURL=calendar.css.map */

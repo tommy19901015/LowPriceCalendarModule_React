@@ -12,7 +12,8 @@ class Calendar extends React.Component {
         jsonUrl:'ticketInfo.json',
         data:[],
         moveDirection:'right',
-        moveGrid:3
+        moveGrid:3,
+        currClass:''
     }
     componentDidMount = () => {
         this.getJsonData()
@@ -86,11 +87,14 @@ class Calendar extends React.Component {
     handleCalendarGet = val => {
         this.setState({ position: val });
     };
-    clickMoveBtn = (e) => {
-        const direction = e.currentTarget.className.split("btn ")[1];
-        this.setState({ moveDirection: direction });
-        console.log(direction)
-    }
+    onPrevClick = () => {
+        // console.log("onPrevClick");
+        this.setState({ currClass: "" });
+      };
+    onNextClick = () => {
+        // console.log("onNextClick");
+        this.setState({ currClass: "transform" });
+    };
     render() {
         return (
             <div className="main_container">
@@ -99,7 +103,7 @@ class Calendar extends React.Component {
                         {this.renderLeftBlock()}
                     </div>
                 </div>
-                <div className="right_block">
+                <div className={"right_block " + this.state.currClass}>
                 <div className="div_table">
                     <div className="div_tr">
                         {this.renderRightHrader()}
@@ -112,8 +116,13 @@ class Calendar extends React.Component {
                         moveGrid={this.state.moveGrid}
                         position={this.state.position ? this.state.position : ""}
                         handleRowVal={this.handleCalendarGet}
+                        // currStyle={this.state.currClass}
                     />)}
                 </div> 
+                </div>
+                <div className="btn_container">
+                     <div className="btn left" onClick={this.onPrevClick}>{'<'}</div>
+                     <div className="btn right"onClick={this.onNextClick} >{'>'}</div>
                 </div>
             </div>
             // <div className="div_table">
