@@ -13,13 +13,15 @@ class Calendar extends React.Component {
         data:[],
         moveDirection:'right',
         moveGrid:3,
-        currClass:''
+        currClass:'',
+        step:0
     }
     componentDidMount = () => {
         this.getJsonData()
         .then(res => {
             this.setState({
-                data:res
+                data:res,
+                
             })            
         })        
     }
@@ -65,36 +67,42 @@ class Calendar extends React.Component {
         this.setState({ position: val });
     };
     onPrevClick = () => {
-        const dataLength =  this.state.data.length;
-        const now = this.state.currClass
-        let transformNum = parseInt(now.split('transform')[1],10);
-        if(now === ''){
-            this.setState({ currClass: ""});
-        }else{
-            if((transformNum - this.state.moveGrid) > 0){
-                transformNum = transformNum - this.state.moveGrid;
-                this.setState({ currClass: "transform" +  transformNum});
-            }else{
-                this.setState({ currClass: ""});
-            }
-        }
         // const dataLength =  this.state.data.length;
-        // this.setState({ currClass: "" });
+        // const now = this.state.currClass
+        // let transformNum = parseInt(now.split('transform')[1],10);
+        // if(now === ''){
+        //     this.setState({ currClass: ""});
+        // }else{
+        //     if((transformNum - this.state.moveGrid) > 0){
+        //         transformNum = transformNum - this.state.moveGrid;
+        //         this.setState({ currClass: "transform" +  transformNum});
+        //     }else{
+        //         this.setState({ currClass: ""});
+        //     }
+        // }
+        // const dataLength =  this.state.data.length;
+        this.setState({ currClass: "" });
+        this.state.step = this.state.step - 10;
+                
       };
     onNextClick = () => {
-        const dataLength =  this.state.data.length;
-        const now = this.state.currClass
-        let transformNum = parseInt(now.split('transform')[1],10);
-        if(now === ''){
-            this.setState({ currClass: "transform" +  this.state.moveGrid});
-        }else{
-            if((transformNum + this.state.moveGrid) < dataLength){
-                transformNum = transformNum + this.state.moveGrid;
-                this.setState({ currClass: "transform" +  transformNum});
-            }else{
-                this.setState({ currClass: "transform" +  dataLength});
-            }
-        }        
+        this.setState({ currClass: "transform"});
+        this.state.step = this.state.step + 10;
+        // console.log(step)
+    
+        // const dataLength =  this.state.data.length;
+        // const now = this.state.currClass
+        // let transformNum = parseInt(now.split('transform')[1],10);
+        // if(now === ''){
+        //     this.setState({ currClass: "transform" +  this.state.moveGrid});
+        // }else{
+        //     if((transformNum + this.state.moveGrid) < dataLength){
+        //         transformNum = transformNum + this.state.moveGrid;
+        //         this.setState({ currClass: "transform" +  transformNum});
+        //     }else{
+        //         this.setState({ currClass: "transform" +  dataLength});
+        //     }
+        // }        
         //transform3 1~3transform  
         //transform6 4~6transform
         //transform7 5~7transform
@@ -113,7 +121,9 @@ class Calendar extends React.Component {
                     </div>
                 </div>
                 <div className={"right_block " + this.state.currClass}>
-                <div className="div_table">
+                <div className="div_table"
+                    style={{transform : "translateX(-" + this.state.step + "%)"}}
+                >
                     <div className="div_tr">
                         {this.renderRightHrader()}
                     </div>

@@ -136,30 +136,12 @@ body .main_container .btn_container {
     line-height: 25px;
     float: right;
   }
-  body .main_container .right_block .div_table {
-    min-width: 320px;
+  body .main_container .right_block {
+    overflow-x: hidden;
   }
   body .main_container .right_block .div_table .div_tr .div_td {
-    min-width: cale(100%/3);
-  }
-  body .main_container .right_block .div_table .div_tr .div_td:not(:nth-child(-n + 3)) {
-    display: table-column;
-  }
-  body .main_container .right_block.transform {
-    -webkit-transform: translateX(cale(100%/3));
-            transform: translateX(cale(100%/3));
-  }
-  body .main_container .right_block.transform .div_table {
-    min-width: 320px;
-  }
-  body .main_container .right_block.transform .div_table .div_tr .div_td:nth-child(-n + 6):nth-child(n + 4) {
-    display: table-cell;
-  }
-  body .main_container .right_block.transform .div_table .div_tr .div_td:not(:nth-child(-n + 6):nth-child(n + 4)) {
-    display: table-column;
-  }
-  body .main_container .right_block.transform .div_table .div_tr .div_td:nth-child(-n + 3) {
-    display: table-column;
+    min-width: 170px;
+    z-index: -1;
   }
   body .main_container .btn_container {
     display: block;
