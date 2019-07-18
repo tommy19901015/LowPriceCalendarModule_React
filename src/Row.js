@@ -14,7 +14,6 @@ class Row extends Component {
     });    
   };
   render() {
-    // console.log(this.props.data.detail)
     return (
       <div className="div_tr">
         {this.props.data.detail.map((obj,i) => (

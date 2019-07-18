@@ -5,19 +5,14 @@ import Row from "./Row";
 
 class Calendar extends React.Component {
     state = {
-        // active: null,
-        // row:7,
-        // column:7,
-        // moveColumn:3,
+        active: null,
+        row:7,
+        column:7,
+        moveColumn:3,
         jsonUrl:'ticketInfo.json',
         data:[],
-        moveDirection:'right',
         moveGrid:3,
-        nowNextClick:1,
-        nowPreClick:1,
         currClass:'transform3',
-        targetGrid:1
-
     }
     componentDidMount = () => {
         this.getJsonData()

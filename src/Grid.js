@@ -26,30 +26,13 @@ class Grid extends Component {
   };
 
   addClassName = () => {
-      let name = this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
-      // if(this.props.rowIdx < 3){
-      //   name = name + ' now';
-      // }
-      // if(this.props.rowIdx >= 3){
-      //   name = name + ' next';
-      // }
-      return name
+    return this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
   } 
-
-  //pre first grid(i) - this.props.moveGrid
-  //now first grid(default 3) 
-  //next first grid(i) + this.props.moveGrid
   
   render() {
     return (
       <div
         className={this.addClassName()}
-        // className={
-        //   this.props.colActive || this.props.rowActive ? " div_td active " : "div_td "
-        // }
-        // className = {`div_td ${this.props.colActive || this.props.rowActive ? 'active' : ''}${this.props.rowIdx >= 3 ? 'mobile' : ''}`}
-        // className = {`div_td ${this.props.colActive || this.props.rowActive ? 'active' : ''}
-        // ${this.props.Movedirection === 'undefined' ? '' : this.props.Movedirection}`}
         data-coordinate={this.props.colIdx + "_" + this.props.rowIdx}
         onClick={this.clickGrid}
       >

@@ -1,6 +1,6 @@
 .div_table {
   display: table;
-  width: 100px;
+  width: 100%;
   border-top: 1px solid #e1e2e4;
 }
 
