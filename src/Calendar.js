@@ -2,35 +2,44 @@ import axios from "axios";
 import React from "react";
 import "./css/calendar.css";
 import Row from "./Row";
+import PropTypes from 'prop-types';
+import propTypesRange from 'prop-types-range';
 
 class Calendar extends React.Component {
     state = {
-        active: null,
         row:7,
         column:7,
-        moveColumn:3,
         jsonUrl:'ticketInfo.json',
         data:[],
         moveGrid:3,
         currClass:'transform3',
     }
     componentDidMount = () => {
+        if(typeof(this.props.moveGrid) != "undefined") this.setState({moveGrid:this.props.moveGrid})
+        if(typeof(this.props.row) != "undefined") this.setState({row:this.props.row})
+        if(typeof(this.props.column) != "undefined") this.setState({column:this.props.column}) 
         this.getJsonData()
+        .then(this.filterJsonData)
         .then(res => {
             this.setState({
-                data:res,
-                
+                data:res,               
             })            
-        })        
+        })      
     }
     getJsonData = () => {
         return axios.get(this.state.jsonUrl)
-        .then( res => {
+        .then( res => {    
             return res.data.data[0].data;
         })
         .catch(function (error) {
             console.log(error);
         });
+    }
+    filterJsonData = (data) => {        
+       const x = this.props.row;
+       const y = this.props.column;
+       data.map((obj,i) => obj.detail.splice(y))
+       return data.filter((obj,i) => i < y)
     }
     renderLeftBlock = () => {
         const leftArr = this.state.data.map((item, i) => {
@@ -40,26 +49,23 @@ class Calendar extends React.Component {
         return leftArr.map((text, i) => {
             if(i === 0){
                 return (
-                <div className="div_tr">
-                    <div key={i} className="div_td backDate first_td">
+                <div key={i} className="div_tr">
+                    <div className="div_td backDate first_td">
                     <div className="fristText">{text.backText}</div>
                     <div className="fristText">{text.goText}</div></div>
                 </div>)
             }else{
                 return (
-                    <div className="div_tr">
-                        <div key={i} className="div_td goDate">{text}</div>
+                    <div key={i} className="div_tr">
+                        <div className="div_td goDate">{text}</div>
                     </div>)
             }            
         })
     }
     renderRightHrader = () => {
-        const headerArr = this.state.data.map(obj => obj.detail).map((obj,i) => obj[i].backDate)
-        return headerArr.map((text, i) => {
-            return (
-                <div key={i} className="div_td goDate">{text}</div>
-            )            
-        })
+        if(this.state.data.length !== 0)
+            return this.state.data[0].detail.map(obj => obj.backDate).map((text,i)=>
+                <div key={i} className="div_td goDate">{text}</div>);
     }
     handleCalendarGet = val => {
         this.setState({ position: val });
@@ -67,22 +73,14 @@ class Calendar extends React.Component {
     onPrevClick = () => {
         const { moveGrid, currClass} = this.state;
         const nextTransform = parseInt(currClass.split('transform')[1],10) - moveGrid;
-        
-        if(nextTransform >= 3){
-            this.setState({ currClass : 'transform' + nextTransform});
-        }else{
+        (nextTransform >= 3) ? this.setState({ currClass : 'transform' + nextTransform}) :
             this.setState({ currClass : 'transform3'});
-        }
       };
     onNextClick = () => {
         const { moveGrid, currClass} = this.state;
         const nextTransform = parseInt(currClass.split('transform')[1],10) + moveGrid;
-        
-        if(nextTransform <= 7){
-            this.setState({ currClass : 'transform' + nextTransform});
-        }else{
+        (nextTransform <= 7) ? this.setState({ currClass : 'transform' + nextTransform}) :
             this.setState({ currClass : 'transform7'});
-        }
     };
     render() {
         return (
@@ -118,3 +116,9 @@ class Calendar extends React.Component {
 }
 
 export default Calendar;
+
+Calendar.propTypes = {
+    row : propTypesRange(1,7),
+    column : propTypesRange(1,7),
+    moveGrid : propTypesRange(1,7),
+}
