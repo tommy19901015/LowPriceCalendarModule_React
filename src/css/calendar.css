@@ -143,6 +143,14 @@ body .main_container .btn_container {
     min-width: 170px;
     z-index: -1;
   }
+  body .main_container .right_block .div_table.transform {
+    -webkit-transform: translateX(-39%);
+            transform: translateX(-39%);
+    -webkit-transition: -webkit-transform ease 1s;
+    transition: -webkit-transform ease 1s;
+    transition: transform ease 1s;
+    transition: transform ease 1s, -webkit-transform ease 1s;
+  }
   body .main_container .btn_container {
     display: block;
     position: absolute;

@@ -127,7 +127,6 @@ body{
                 }
             }
             .right_block{
-                // overflow: hidden;
                 overflow-x: hidden;
                 .div_table{
                     .div_tr{
@@ -140,13 +139,14 @@ body{
                             // }
                         }    
                     }
+                    &.transform{
+                        transform: translateX(-39%);
+                        transition : transform ease 1s;
+                        // position: relative;
+                        // right:50px;
+                        // transition: right 5s;
+                    }
                 }
-                // &.transform{
-                    // transform: translateX(-20%);
-                    // position: relative;
-                    // right:50px;
-                    // transition: right 5s;
-                // }
                 // &.transform {
                 //     .div_td{
                 //         &:nth-child(-n + 6):nth-child(n + 4){

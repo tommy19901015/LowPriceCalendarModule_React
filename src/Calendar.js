@@ -87,7 +87,7 @@ class Calendar extends React.Component {
       };
     onNextClick = () => {
         this.setState({ currClass: "transform"});
-        this.state.step = this.state.step + 10;
+        // this.state.step = this.state.step + 10;
         // console.log(step)
     
         // const dataLength =  this.state.data.length;
@@ -120,9 +120,9 @@ class Calendar extends React.Component {
                         {this.renderLeftBlock()}
                     </div>
                 </div>
-                <div className={"right_block " + this.state.currClass}>
-                <div className="div_table"
-                    style={{transform : "translateX(-" + this.state.step + "%)"}}
+                <div className={"right_block"}>
+                <div className={"div_table " + this.state.currClass}
+                    // style={{transform : "translateX(-" + this.state.step + "%)"}}
                 >
                     <div className="div_tr">
                         {this.renderRightHrader()}
