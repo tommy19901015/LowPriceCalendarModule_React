@@ -139,13 +139,52 @@ body .main_container .btn_container {
   body .main_container .right_block {
     overflow-x: hidden;
   }
-  body .main_container .right_block .div_table .div_tr .div_td {
-    min-width: 170px;
-    z-index: -1;
+  body .main_container .right_block .div_table {
+    width: 233%;
   }
-  body .main_container .right_block .div_table.transform {
-    -webkit-transform: translateX(-39%);
-            transform: translateX(-39%);
+  body .main_container .right_block .div_table .div_tr {
+    width: 100%;
+    height: 51px;
+  }
+  body .main_container .right_block .div_table .div_tr .div_td {
+    min-width: calc(100% / 7);
+    width: calc(100% / 7);
+  }
+  body .main_container .right_block .div_table.transform3 {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: -webkit-transform ease 1s;
+    transition: -webkit-transform ease 1s;
+    transition: transform ease 1s;
+    transition: transform ease 1s, -webkit-transform ease 1s;
+  }
+  body .main_container .right_block .div_table.transform4 {
+    -webkit-transform: translateX(-14.4%);
+            transform: translateX(-14.4%);
+    -webkit-transition: -webkit-transform ease 1s;
+    transition: -webkit-transform ease 1s;
+    transition: transform ease 1s;
+    transition: transform ease 1s, -webkit-transform ease 1s;
+  }
+  body .main_container .right_block .div_table.transform5 {
+    -webkit-transform: translateX(-29%);
+            transform: translateX(-29%);
+    -webkit-transition: -webkit-transform ease 1s;
+    transition: -webkit-transform ease 1s;
+    transition: transform ease 1s;
+    transition: transform ease 1s, -webkit-transform ease 1s;
+  }
+  body .main_container .right_block .div_table.transform6 {
+    -webkit-transform: translateX(-43%);
+            transform: translateX(-43%);
+    -webkit-transition: -webkit-transform ease 1s;
+    transition: -webkit-transform ease 1s;
+    transition: transform ease 1s;
+    transition: transform ease 1s, -webkit-transform ease 1s;
+  }
+  body .main_container .right_block .div_table.transform7 {
+    -webkit-transform: translateX(-57.3%);
+            transform: translateX(-57.3%);
     -webkit-transition: -webkit-transform ease 1s;
     transition: -webkit-transform ease 1s;
     transition: transform ease 1s;

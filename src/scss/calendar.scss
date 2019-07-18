@@ -129,60 +129,36 @@ body{
             .right_block{
                 overflow-x: hidden;
                 .div_table{
-                    .div_tr{
-                        .div_td{
-                            min-width: 170px;
-                            // min-width:cale(100vw/3);
-                            z-index: -1;
-                            // &:not(:nth-child(-n + 3)){ 
-                            //     display: table-column;
-                            // }
-                        }    
-                    }
-                    &.transform{
-                        transform: translateX(-39%);
+                    width: 233%;
+                    .div_tr {
+                        width: 100%;
+                        height: 51px;
+                        .div_td {
+                          min-width: calc(100% / 7);
+                          width: calc(100% / 7);
+                        }
+                      }
+                    &.transform3{
+                        transform: translateX(0);
                         transition : transform ease 1s;
-                        // position: relative;
-                        // right:50px;
-                        // transition: right 5s;
+                    }
+                    &.transform4{
+                        transform: translateX(-14.4%);
+                        transition : transform ease 1s;
+                    }
+                    &.transform5{
+                        transform: translateX(-29%);
+                        transition : transform ease 1s;
+                    }
+                    &.transform6{
+                        transform: translateX(-43%);
+                        transition : transform ease 1s;
+                    }
+                    &.transform7{
+                        transform: translateX(-57.3%);
+                        transition : transform ease 1s;
                     }
                 }
-                // &.transform {
-                //     .div_td{
-                //         &:nth-child(-n + 6):nth-child(n + 4){
-                //             display: table-cell;
-                //         }
-                //         &:not(:nth-child(-n + 6):nth-child(n + 4)){ 
-                //             display: table-column;
-                //         }
-                //         &:nth-child(-n + 3){ 
-                //             display: table-column;
-                //         }   
-                //     }
-                // }
-                // &.transform6 {
-                //     .div_td{
-                //         &:nth-child(-n + 6):nth-child(n + 4){
-                //             display: table-cell;
-                //         }
-                //         &:not(:nth-child(-n + 6):nth-child(n + 4)){ 
-                //             display: table-column;
-                //         }
-                //         &:nth-child(-n + 3){ 
-                //             display: table-column;
-                //         }   
-                //     }
-                // }
-                // &.transform7 {
-                //     .div_td{
-                //         &:nth-child(-n + 6):nth-child(n + 4){
-                //             display: table-column;
-                //         }
-                //         &:nth-child(n + 5){ 
-                //             display: table-cell;
-                //         }   
-                //     }
-                // }
             }
             .btn_container{
                 display: block;
