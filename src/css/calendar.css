@@ -63,17 +63,12 @@ body .main_container .right_block {
 body .main_container .right_block .div_table {
   display: table;
   width: 100%;
-  border-top: 1px solid #e1e2e4;
   border-right: 1px solid #e1e2e4;
 }
 
 body .main_container .right_block .div_table .div_tr {
   display: table-row;
   height: 50px;
-}
-
-body .main_container .right_block .div_table .div_tr:first-child {
-  background: #eaedf2;
 }
 
 body .main_container .right_block .div_table .div_tr .div_td {
@@ -88,6 +83,10 @@ body .main_container .right_block .div_table .div_tr .div_td {
 
 body .main_container .right_block .div_table .div_tr .div_td.active {
   background-color: #f7f7f7;
+}
+
+body .main_container .right_block .div_table .div_tr .div_td.goDate {
+  background: #eaedf2;
 }
 
 body .main_container .btn_container {
@@ -105,44 +104,13 @@ body .main_container .btn_container {
     position: absolute;
     top: 0;
   }
-  body .main_container .left_block .div_table {
-    width: 100%;
-    border-top: 1px solid #e1e2e4;
-  }
-  body .main_container .left_block .div_table .div_tr {
-    display: table-row;
-    height: 50px;
-  }
-  body .main_container .left_block .div_table .div_tr .div_td {
-    display: table-cell;
-    border-left: 1px solid #e1e2e4;
-    border-bottom: 1px solid #e1e2e4;
-    color: #666;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-  }
-  body .main_container .left_block .div_table .div_tr .div_td:first-child {
-    background: #f1f1f1;
-  }
-  body .main_container .left_block .div_table .div_tr .div_td.first_td {
-    padding: 5px;
-    background: #eaedf2;
-  }
-  body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText {
-    height: 25px;
-    float: left;
-  }
-  body .main_container .left_block .div_table .div_tr .div_td.first_td .fristText:first-child {
-    line-height: 25px;
-    float: right;
-  }
   body .main_container .right_block {
     overflow: hidden;
     margin-left: 100px;
   }
   body .main_container .right_block .div_table {
     width: 100%;
+    border-right: none;
   }
   body .main_container .right_block .div_table .div_tr {
     -ms-flex-wrap: nowrap;
@@ -151,7 +119,7 @@ body .main_container .btn_container {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 51px;
   }
   body .main_container .right_block .div_table .div_tr .div_td {
     display: initial;

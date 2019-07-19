@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import "./css/calendar.css";
 import Row from "./Row";
-import PropTypes from 'prop-types';
 import propTypesRange from 'prop-types-range';
 
 class Calendar extends React.Component {
@@ -79,8 +78,8 @@ class Calendar extends React.Component {
     onNextClick = () => {
         const { moveGrid, currClass} = this.state;
         const nextTransform = parseInt(currClass.split('transform')[1],10) + moveGrid;
-        (nextTransform <= 7) ? this.setState({ currClass : 'transform' + nextTransform}) :
-            this.setState({ currClass : 'transform7'});
+        (nextTransform <= this.props.column) ? this.setState({ currClass : 'transform' + nextTransform}) :
+            this.setState({ currClass : 'transform' + this.props.column});
     };
     render() {
         return (

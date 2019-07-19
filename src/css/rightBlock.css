@@ -1,17 +1,12 @@
 .div_table {
   display: table;
   width: 100%;
-  border-top: 1px solid #e1e2e4;
   border-right: 1px solid #e1e2e4;
 }
 
 .div_table .div_tr {
   display: table-row;
   height: 50px;
-}
-
-.div_table .div_tr:first-child {
-  background: #eaedf2;
 }
 
 .div_table .div_tr .div_td {
@@ -26,5 +21,9 @@
 
 .div_table .div_tr .div_td.active {
   background-color: #f7f7f7;
+}
+
+.div_table .div_tr .div_td.goDate {
+  background: #eaedf2;
 }
 /*# sourceMappingURL=rightBlock.css.map */

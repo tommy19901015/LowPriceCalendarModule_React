@@ -1,25 +1,24 @@
-.div_table{
+.div_table {
     display: table;
     width: 100%;
-    border-top: 1px solid #e1e2e4;
     border-right: 1px solid #e1e2e4;
-    .div_tr{
-        display: table-row;
-            height: 50px;
-            &:first-child{
-                background: #eaedf2;
-            } 
-            .div_td{
-                display: table-cell;
-                border-left: 1px solid #e1e2e4;
-                border-bottom: 1px solid #e1e2e4;
-                color: #666;
-                text-align: center;
-                line-height: 50px;
-                cursor: pointer;
-                &.active{
-                    background-color: #f7f7f7;
-                }
-            }    
+    .div_tr {
+      display: table-row;
+      height: 50px;
+      .div_td {
+        display: table-cell;
+        border-left: 1px solid #e1e2e4;
+        border-bottom: 1px solid #e1e2e4;
+        color: #666;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        &.active {
+          background-color: #f7f7f7;
+        }
+        &.goDate{
+          background: #eaedf2;
+        }
+      }
     }
-}
+  }
