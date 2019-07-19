@@ -167,32 +167,32 @@ body .main_container .btn_container {
     transition: transform ease 1s, -webkit-transform ease 1s;
   }
   body .main_container .right_block .div_table.transform4 {
-    -webkit-transform: translateX(-14.4%);
-            transform: translateX(-14.4%);
+    -webkit-transform: translateX(calc(-100% / 3));
+            transform: translateX(calc(-100% / 3));
     -webkit-transition: -webkit-transform ease 1s;
     transition: -webkit-transform ease 1s;
     transition: transform ease 1s;
     transition: transform ease 1s, -webkit-transform ease 1s;
   }
   body .main_container .right_block .div_table.transform5 {
-    -webkit-transform: translateX(-29%);
-            transform: translateX(-29%);
+    -webkit-transform: translateX(calc(-200% / 3));
+            transform: translateX(calc(-200% / 3));
     -webkit-transition: -webkit-transform ease 1s;
     transition: -webkit-transform ease 1s;
     transition: transform ease 1s;
     transition: transform ease 1s, -webkit-transform ease 1s;
   }
   body .main_container .right_block .div_table.transform6 {
-    -webkit-transform: translateX(-43%);
-            transform: translateX(-43%);
+    -webkit-transform: translateX(calc(-300% / 3));
+            transform: translateX(calc(-300% / 3));
     -webkit-transition: -webkit-transform ease 1s;
     transition: -webkit-transform ease 1s;
     transition: transform ease 1s;
     transition: transform ease 1s, -webkit-transform ease 1s;
   }
   body .main_container .right_block .div_table.transform7 {
-    -webkit-transform: translateX(-57.3%);
-            transform: translateX(-57.3%);
+    -webkit-transform: translateX(calc(-400% / 3));
+            transform: translateX(calc(-400% / 3));
     -webkit-transition: -webkit-transform ease 1s;
     transition: -webkit-transform ease 1s;
     transition: transform ease 1s;

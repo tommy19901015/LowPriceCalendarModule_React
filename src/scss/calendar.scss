@@ -1,6 +1,3 @@
-$n: 7;
-$n-mobile: 3;
-
 body {
   font-family: Microsoft JhengHei;
   font-size: 14px;
@@ -82,8 +79,6 @@ body {
     }
   }
 }
-
-// @media screen and(min-width: 320px) and (max-width: 769px) {
 @media (max-width: 769px) {
   body {
     .main_container {
@@ -143,26 +138,29 @@ body {
               width: calc(100% / 3);
             }
           }
+        //   .goDate{
+        //     background: #eaedf2;
+        //   }
           &.transform3{
             transform: translateX(0);
             transition : transform ease 1s;
-        }
-        &.transform4{
-            transform: translateX(-14.4%);
-            transition : transform ease 1s;
-        }
-        &.transform5{
-            transform: translateX(-29%);
-            transition : transform ease 1s;
-        }
-        &.transform6{
-            transform: translateX(-43%);
-            transition : transform ease 1s;
-        }
-        &.transform7{
-            transform: translateX(-57.3%);
-            transition : transform ease 1s;
-        }
+          }
+          &.transform4{
+                transform: translateX(calc(-100% / 3));
+                transition : transform ease 1s;
+          }
+          &.transform5{
+                transform : translateX(calc(-200% / 3));
+                transition : transform ease 1s;
+          }
+          &.transform6{
+                transform : translateX(calc(-300% / 3));
+                transition : transform ease 1s;
+          }
+          &.transform7{
+                transform : translateX(calc(-400% / 3));
+                transition : transform ease 1s;
+          }
         }
       }
       .btn_container {
