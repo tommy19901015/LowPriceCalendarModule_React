@@ -4,7 +4,7 @@ import Calendar from './Calendar'
 function App() {
   return (
     <div className="App">
-      <Calendar row={4} column={4}  moveGrid={1} />
+      <Calendar row={2} column={7}  moveGrid={1} />
     </div>
   );
 }

@@ -39,7 +39,7 @@ class Calendar extends React.Component {
        const x = this.props.row;
        const y = this.props.column;
        data.map((obj,i) => obj.detail.splice(y))
-       return data.filter((obj,i) => i < y)
+       return data.filter((obj,i) => i < x)
     }
     renderLeftBlock = () => {
         const leftArr = this.state.data.map((item, i) => {
@@ -119,6 +119,6 @@ export default Calendar;
 
 Calendar.propTypes = {
     row : propTypesRange(1,7),
-    column : propTypesRange(1,7),
+    column : propTypesRange(3,7),
     moveGrid : propTypesRange(1,7),
 }

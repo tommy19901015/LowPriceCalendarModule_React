@@ -20,8 +20,6 @@ class Grid extends Component {
     },() => {
         this.props.handleGridVal(this.state.position);
     });
-    console.log('moveDirection = ' + this.props.moveDirection)
-    console.log('moveGrid = ' + this.props.moveGrid)
   };
 
   addClassName = () => {
